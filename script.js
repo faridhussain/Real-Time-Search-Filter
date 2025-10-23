@@ -63,5 +63,9 @@ showUsers(users);
 
 let inp = document.querySelector(".inp");
 inp.addEventListener("input", () => {
-  console.log(inp.value);
+  let newUsers = users.filter((user) => {
+    return user.name.toLowerCase().startsWith(inp.value.toLowerCase());
+  });
+  document.querySelector(".cards").innerHTML = "";
+  showUsers(newUsers);
 });
